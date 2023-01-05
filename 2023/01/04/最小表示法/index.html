@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="算法" />
+    <meta name="keywords" content="python, 算法" />
   
   <meta name="description" content="最小表示法1234567891011121314151617181920def getMinDenote(s:str) -&gt; str:    lens &#x3D; len(s)    word &#x3D; list(s) + list(s)    i,j &#x3D; 0, 1    while i &lt; lens and j &lt; lens:        k &#x3D; 0        while k &lt;">
 <meta property="og:type" content="article">
@@ -25,9 +25,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/01/04/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/pic.jpg">
 <meta property="article:published_time" content="2023-01-04T04:55:27.000Z">
-<meta property="article:modified_time" content="2023-01-04T04:58:20.189Z">
+<meta property="article:modified_time" content="2023-01-05T07:51:10.390Z">
 <meta property="article:author" content="YuChen">
 <meta property="article:tag" content="算法">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/01/04/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/pic.jpg">
   
@@ -80,7 +81,217 @@
 
 
     <body class="custom-background">
-        <div id="kratos-wrapper">
+        <!-- 元宵节灯笼样式开始 -->
+<style>
+    @media only screen and (min-width: 1124px) {
+        .nav-menu {
+            padding-right: 96px;
+        }
+    }
+    @media only screen and (max-width: 760px) {
+        .deng-box, .deng-box1 {
+            width: 40%;
+        }
+        .right {
+            float: left!important;
+        }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .right {
+            float: left!important;
+        }
+    }
+    .deng-box {
+        position: fixed;
+        top: -30px;
+        right: 0px;
+        z-index: 1;
+    }
+    .deng-box1 {
+        position: fixed;
+        top: -30px;
+        right: 0px;
+        z-index: 1;
+    }
+    .deng-box1 .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 5s infinite ease-in-out;
+        box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+    }
+    .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3s infinite ease-in-out;
+        box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+    }
+    .deng-a {
+        width: 100px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: 12px 8px 8px 10px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .deng-b {
+        width: 45px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: -4px 8px 8px 26px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+    .xian {
+        position: absolute;
+        top: -50px;
+        left: 60px;
+        width: 2px;
+        height: 50px;
+        background: #dc8f03;
+    }
+    .shui-a {
+        position: relative;
+        width: 5px;
+        height: 20px;
+        margin: -5px 0 0 59px;
+        -webkit-animation: swing 4s infinite ease-in-out;
+        -webkit-transform-origin: 50% -45px;
+        background: #ffa500;
+        border-radius: 0 0 5px 5px;
+    }
+    .shui-b {
+        position: absolute;
+        top: 14px;
+        left: -2px;
+        width: 10px;
+        height: 10px;
+        background: #dc8f03;
+        border-radius: 50%;
+    }
+    .shui-c {
+        position: absolute;
+        top: 18px;
+        left: -2px;
+        width: 10px;
+        height: 35px;
+        background: #ffa500;
+        border-radius: 0 0 0 5px;
+    }
+    .deng:before {
+        position: absolute;
+        top: -7px;
+        left: 29px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        z-index: 999;
+        border-radius: 5px 5px 0 0;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    .deng:after {
+        position: absolute;
+        bottom: -7px;
+        left: 10px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        margin-left: 20px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+    /* @font-face {
+        font-family: "华文行楷";
+        src: url('/fonts/华文行楷.ttf');
+    } */
+    .deng-t {
+        font-family: '华文行楷';
+        font-size: 40px;
+        color: #dc8f03;
+        font-weight: bold;
+        line-height: 88px;
+        text-align: center;
+    }
+    .deng-box{
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .deng-box1{
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+    .night .deng-t,
+    .night .deng-box,
+    .night .deng-box1 {
+        background: transparent !important;
+    }
+    @-moz-keyframes swing {
+        0% {
+                -moz-transform: rotate(-10deg)
+        }
+        50% {
+             -moz-transform: rotate(10deg)
+        }
+        100% {
+                -moz-transform: rotate(-10deg)
+        }
+    }
+    @-webkit-keyframes swing {
+        0% {
+                -webkit-transform: rotate(-10deg)
+        }
+        50% {
+                -webkit-transform: rotate(10deg)
+        }
+        100% {
+                -webkit-transform: rotate(-10deg)
+        }
+    }
+</style>
+<div class="deng-box">
+    <div class="deng">
+        <div class="xian"></div>
+        <div class="deng-a">
+            <div class="deng-b"><div class="deng-t">新</div></div>
+        </div>
+        <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+    </div>
+</div>
+<div class="deng-box1">
+    <div class="deng">
+        <div class="xian"></div>
+        <div class="deng-a">
+            <div class="deng-b"><div class="deng-t">年</div></div>
+        </div>
+        <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+    </div>
+</div>
+<!-- 元宵节灯笼样式结束 -->
+
+
+
+<div id="kratos-wrapper">
     <div id="kratos-page">
         <div id="kratos-header">
             <header id="kratos-desktop-topnav" class="kratos-topnav">
@@ -218,7 +429,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1672808300189"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1672905070390"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -310,14 +521,23 @@
             <div class="footer-tag clearfix">
                 <div class="pull-left">
                 <i class="fa fa-tags"></i>
-                    <a class="tag-none-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+                    <a class="tag-none-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-none-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2023-01-04T04:58:20.189Z" itemprop="dateModified">最后编辑：2023-01-04</time>
+                    <time datetime="2023-01-05T07:51:10.390Z" itemprop="dateModified">最后编辑：2023-01-05</time>
                 </div>
             </div>
         </footer>
     </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" 背包问题" href="/2023/01/05/背包问题/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
     
     
 </article>
@@ -351,7 +571,7 @@
                 文章
             </span>
             <span class="count">
-                1
+                2
             </span>
         </a>
         <a class="meta-item" href="/categories/">
@@ -367,7 +587,7 @@
                 标签
             </span>
             <span class="count">
-                1
+                3
             </span>
         </a>
     </div>
@@ -382,7 +602,7 @@
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 0.6em;">算法</a>
+        <a href="/tags/python/" style="font-size: 0.8em;">python</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 0.6em;">算法</a> <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" style="font-size: 0.6em;">背包问题</a>
       </div>
   </aside>
 
@@ -393,6 +613,12 @@
   <div class="tab-content">
       <ul class="list-group">
         
+        
+          
+          
+            <a class="list-group-item" href="/2023/01/05/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"><i class="fa  fa-book"></i> 背包问题</a>
+            
+          
         
           
           
