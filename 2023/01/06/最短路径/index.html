@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <link rel="icon" href="/images/logo.png">
   
-  <title>二分算法 | 雨辰枫司の猫舍</title>
+  <title>最短路径 | 雨辰枫司の猫舍</title>
   <meta name="author" content="YuChen" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -14,24 +14,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="二分, 模板, 算法" />
+    <meta name="keywords" content="最短路径, 算法" />
   
-  <meta name="description" content="二分模板">
+  <meta name="description" content="最短路径问题求一个图的最短路径。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二分算法">
-<meta property="og:url" content="http://example.com/2023/01/05/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="最短路径">
+<meta property="og:url" content="http://example.com/2023/01/06/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/index.html">
 <meta property="og:site_name" content="雨辰枫司の猫舍">
-<meta property="og:description" content="二分模板">
+<meta property="og:description" content="最短路径问题求一个图的最短路径。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/01/05/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95/pic.jpg">
-<meta property="article:published_time" content="2023-01-05T09:20:26.000Z">
-<meta property="article:modified_time" content="2023-01-05T09:31:05.716Z">
+<meta property="og:image" content="http://example.com/images/logo.png">
+<meta property="article:published_time" content="2023-01-06T02:53:18.000Z">
+<meta property="article:modified_time" content="2023-01-06T02:56:09.430Z">
 <meta property="article:author" content="YuChen">
 <meta property="article:tag" content="算法">
-<meta property="article:tag" content="二分">
-<meta property="article:tag" content="模板">
+<meta property="article:tag" content="最短路径">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2023/01/05/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95/pic.jpg">
+<meta name="twitter:image" content="http://example.com/images/logo.png">
   
   <!-- 站点验证相关 -->
   
@@ -403,15 +402,15 @@
 
             <article itemscope itemtype="https://schema.org/Article">
     
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/05/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/06/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
-                <h1 class="kratos-entry-title text-center" itemprop="name headline">二分算法</h1>
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">最短路径</h1>
             
             
             <ul class="kratos-post-meta text-center">
-                <li><time datetime="2023-01-05T09:20:26.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2023-01-05</time></li>
+                <li><time datetime="2023-01-06T02:53:18.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2023-01-06</time></li>
                 <li itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <i class="fa fa-user"></i> 作者 <span itemprop="name">雨辰</span>
                 </li>
@@ -419,7 +418,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        475
+                        ~3.73K
                     
                     字
                 </li>
@@ -430,18 +429,26 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1672911065716"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1672973769430"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
             
             <hr />
-            <div itemprop="articleBody"><h1 id="二分模板"><a href="#二分模板" class="headerlink" title="二分模板"></a>二分模板</h1><span id="more"></span>
-<p>算法思路：假设目标值在闭区间[l, r]中， 每次将区间长度缩小一半，当l = r时，我们就找到了目标值。</p>
-<h3 id="模板一"><a href="#模板一" class="headerlink" title="模板一"></a>模板一</h3><p>将区间划分为 <strong>[l , mid]</strong> 和 <strong>[mid + 1 , r]</strong> , 这时候只要更新 <strong>l = mid + 1</strong> 或者 <strong>r = mid</strong> ， mid 不需要加一<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> l &lt; r:</span><br><span class="line">    mid = (l + r) &gt;&gt; <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> check(mid):</span><br><span class="line">        r = mid</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        l = mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure></p>
-<h3 id="模板二"><a href="#模板二" class="headerlink" title="模板二"></a>模板二</h3><p>将区间划分为 <strong>[l , mid - 1]</strong> 和 <strong>[mid , r]</strong> , 这时候只要更新 <strong>l = mid</strong> 或者 <strong>r = mid - 1</strong> ， 为了防止死循环，mid 需要加一</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mid = (l + r + <span class="number">1</span>) &gt;&gt; <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> l &lt; r:</span><br><span class="line">    <span class="keyword">if</span> check(mid):</span><br><span class="line">        l = mid</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        r = mid - <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure>
-</div>
+            <div itemprop="articleBody"><h1 id="最短路径问题"><a href="#最短路径问题" class="headerlink" title="最短路径问题"></a>最短路径问题</h1><p>求一个图的最短路径。</p>
+<span id="more"></span>
+<p>示例用邻接矩阵来存储图 n表示大小,maxNum表示无穷,array表示图<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Graph</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,n:<span class="built_in">int</span>,maxNum = sys.maxsize,array = []</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">if</span> array != []:</span><br><span class="line">            self.arr = array</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.arr = [[maxNum] * n <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">        self.maxNum = maxNum</span><br><span class="line">        self.size = n</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">self,a:<span class="built_in">int</span>,b:<span class="built_in">int</span>,weights</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        self.arr[a][b] = weights</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">delete</span>(<span class="params">self,a,b</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        weights = self.arr[a][b]</span><br><span class="line">        self.arr[a][b] = self.maxNum</span><br><span class="line">        <span class="keyword">return</span> weights</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h3 id="BFS-广度优先搜索-算法-无权图、单源最短路"><a href="#BFS-广度优先搜索-算法-无权图、单源最短路" class="headerlink" title="BFS(广度优先搜索)算法 (无权图、单源最短路)"></a>BFS(广度优先搜索)算法 (无权图、单源最短路)</h3><p>广度优先搜索主要用于求解无权图或者等权图的最短路径，主要由一个点向外扩散，第一次到达的路径就是源点到达该点的最短路径。</p>
+<p>其过程就是用一个表(table)来存储每个节点的访问情况，初始化时将一个顶点加入队列(queue)。</p>
+<p>将队头取出,将它在表(table)内的状态设置为True(表示已经访问过),将它未访问的邻点加入队列(queue),循环该过程，直到每个顶点都被访问过了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">bfs</span>(<span class="params">self,startPoint = <span class="number">0</span></span>):</span><br><span class="line">    table = [<span class="literal">False</span>] * self.size</span><br><span class="line">    queue = [<span class="number">0</span>] * self.size</span><br><span class="line">    start,end = <span class="number">0</span>,-<span class="number">1</span></span><br><span class="line">    graph = [self.maxNum] * self.size </span><br><span class="line">    layer = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#初始化</span></span><br><span class="line">    end += <span class="number">1</span></span><br><span class="line">    table[startPoint] = <span class="literal">True</span></span><br><span class="line">    queue[end] = startPoint</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> start &lt;= end:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(end - start + <span class="number">1</span>):</span><br><span class="line">            cur = queue[start]</span><br><span class="line">            start += <span class="number">1</span></span><br><span class="line">            graph[cur] = layer</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(self.size):</span><br><span class="line">                <span class="keyword">if</span> self.arr[cur][i] != self.maxNum <span class="keyword">and</span> <span class="keyword">not</span> table[i]:</span><br><span class="line">                    end += <span class="number">1</span></span><br><span class="line">                    queue[end] = i</span><br><span class="line">                    table[i] = <span class="literal">True</span></span><br><span class="line">        layer += <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> graph</span><br></pre></td></tr></table></figure>
+<p>返回的是startPoint到各个顶点的最短距离</p>
+<h3 id="Dijkstra算法-带权图、无权图、无负权、单源最短路"><a href="#Dijkstra算法-带权图、无权图、无负权、单源最短路" class="headerlink" title="Dijkstra算法 (带权图、无权图、无负权、单源最短路)"></a>Dijkstra算法 (带权图、无权图、无负权、单源最短路)</h3><p>与prim算法差不多，prim是到集合的距离，而Dijkstra是到某个点的距离<br>这里不做过多叙述，可以参考最小生成树的prim算法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">dijkstra</span>(<span class="params">self,startPrint = <span class="number">0</span></span>):</span><br><span class="line">    point = [<span class="literal">False</span>] * self.size</span><br><span class="line">    distance = [self.maxNum] * self.size</span><br><span class="line">    precursor = [-<span class="number">1</span>] * self.size</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 初始化</span></span><br><span class="line">    distance[startPrint] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(self.size):</span><br><span class="line">        <span class="built_in">min</span> = self.maxNum</span><br><span class="line">        count = -<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(self.size):</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">min</span> &gt; distance[j] <span class="keyword">and</span> <span class="keyword">not</span> point[j]:</span><br><span class="line">                <span class="built_in">min</span> = distance[j]</span><br><span class="line">                count = j</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> count != -<span class="number">1</span>:</span><br><span class="line">            point[count] = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(self.size):</span><br><span class="line">                <span class="keyword">if</span> self.arr[count][j] != self.maxNum:</span><br><span class="line">                    <span class="keyword">if</span> (distance[count] + self.arr[count][j] &lt; distance[j] <span class="keyword">and</span> <span class="keyword">not</span> point[j]) <span class="keyword">or</span> (precursor[j] == -<span class="number">1</span> <span class="keyword">and</span> j != startPrint):</span><br><span class="line">                        distance[j] = distance[count] + self.arr[count][j]</span><br><span class="line">                        precursor[j] = count</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> distance,precursor</span><br></pre></td></tr></table></figure></p>
+<h3 id="dellman-ford算法-带权图、无权图、单源最短路"><a href="#dellman-ford算法-带权图、无权图、单源最短路" class="headerlink" title="dellman-ford算法(带权图、无权图、单源最短路)"></a>dellman-ford算法(带权图、无权图、单源最短路)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">dellmanFord</span>(<span class="params">self,startPoint = <span class="number">0</span></span>):</span><br><span class="line">    graph = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(self.size):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(self.size):</span><br><span class="line">            <span class="keyword">if</span> self.arr[i][j] != self.maxNum:</span><br><span class="line">                graph.append([i,j,self.arr[i][j]])</span><br><span class="line">    </span><br><span class="line">    dist = [self.maxNum] * (self.size)</span><br><span class="line">    dist[startPoint] = <span class="number">0</span></span><br><span class="line">    flag = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(self.size - <span class="number">1</span>):</span><br><span class="line">        flag = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(graph)):</span><br><span class="line">            <span class="keyword">if</span> dist[graph[j][<span class="number">1</span>]] &gt; dist[graph[j][<span class="number">0</span>]] + graph[j][<span class="number">2</span>]:</span><br><span class="line">                dist[graph[j][<span class="number">1</span>]] = dist[graph[j][<span class="number">0</span>]] + graph[j][<span class="number">2</span>]</span><br><span class="line">                flag = <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> flag:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    </span><br><span class="line">    flag = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(graph)):</span><br><span class="line">        <span class="keyword">if</span> dist[graph[j][<span class="number">1</span>]] &gt; dist[graph[j][<span class="number">0</span>]] + graph[j][<span class="number">2</span>]:</span><br><span class="line">            flag = <span class="literal">True</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> dist,flag</span><br></pre></td></tr></table></figure>
+<h3 id="Floyd算法-带权图、无权图、无负环、各个顶点之间的最短路径"><a href="#Floyd算法-带权图、无权图、无负环、各个顶点之间的最短路径" class="headerlink" title="Floyd算法 (带权图、无权图、无负环、各个顶点之间的最短路径)"></a>Floyd算法 (带权图、无权图、无负环、各个顶点之间的最短路径)</h3><p>用一个新的数组来记录当前状态:</p>
+<p>graph(i,j):表示从i到j的最短距离</p>
+<p>graph(i,j) = min(graph(i,j) , graph(i,k) + graph(k,j)):表示从i -&gt; k -&gt; j 这条路比 i -&gt; j 这条路短</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">floyd</span>(<span class="params">self</span>):</span><br><span class="line">    graph = self.arr.copy()</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(self.size):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(self.size):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(self.size):</span><br><span class="line">                <span class="keyword">if</span> i != j <span class="keyword">and</span> graph[i][j] &gt; graph[i][k] + graph[k][j]:</span><br><span class="line">                    graph[i][j] = graph[i][k] + graph[k][j]</span><br><span class="line">    <span class="keyword">return</span> graph</span><br></pre></td></tr></table></figure></div>
         </div>
         
         <footer class="kratos-entry-footer clearfix">
@@ -490,7 +497,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://example.com/2023/01/05/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95/",
+                text: "http://example.com/2023/01/06/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -502,9 +509,9 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://example.com/2023/01/05/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95/";
-            const title         = "「二分算法」";
-            const excerpt       = `二分模板`;
+            const hostUrl       = "http://example.com/2023/01/06/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/";
+            const title         = "「最短路径」";
+            const excerpt       = `最短路径问题求一个图的最短路径。`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -523,10 +530,10 @@
             <div class="footer-tag clearfix">
                 <div class="pull-left">
                 <i class="fa fa-tags"></i>
-                    <a class="tag-none-link" href="/tags/%E4%BA%8C%E5%88%86/" rel="tag">二分</a>, <a class="tag-none-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a>, <a class="tag-none-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+                    <a class="tag-none-link" href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" rel="tag">最短路径</a>, <a class="tag-none-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2023-01-05T09:31:05.716Z" itemprop="dateModified">最后编辑：2023-01-05</time>
+                    <time datetime="2023-01-06T02:56:09.430Z" itemprop="dateModified">最后编辑：2023-01-06</time>
                 </div>
             </div>
         </footer>
@@ -535,12 +542,12 @@
         <nav class="navigation post-navigation clearfix" role="navigation">
             
             <div class="nav-previous clearfix">
-                <a title=" 并查集" href="/2023/01/05/并查集/">&lt; 上一篇</a>
+                <a title=" 快速幂" href="/2023/01/05/快速幂/">&lt; 上一篇</a>
             </div>
             
             
             <div class="nav-next clearfix">
-                <a title=" 快速幂" href="/2023/01/05/快速幂/">下一篇 &gt;</a>
+                <a title=" 最小生成树" href="/2023/01/06/最小生成树/">下一篇 &gt;</a>
             </div>
             
         </nav>
