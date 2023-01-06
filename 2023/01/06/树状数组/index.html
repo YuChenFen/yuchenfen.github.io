@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <link rel="icon" href="/images/logo.png">
   
-  <title>树状数组 | 雨辰枫司の猫舍</title>
+  <title>树状数组 | 雨辰枫司の寮舍</title>
   <meta name="author" content="YuChen" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -20,12 +20,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="树状数组">
 <meta property="og:url" content="http://example.com/2023/01/06/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/index.html">
-<meta property="og:site_name" content="雨辰枫司の猫舍">
+<meta property="og:site_name" content="雨辰枫司の寮舍">
 <meta property="og:description" content="树状数组用于快速查找和修改">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/01/06/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/pic.jpg">
 <meta property="article:published_time" content="2023-01-06T03:11:27.000Z">
-<meta property="article:modified_time" content="2023-01-06T03:17:44.839Z">
+<meta property="article:modified_time" content="2023-01-06T05:03:03.625Z">
 <meta property="article:author" content="YuChen">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
@@ -367,7 +367,7 @@
             </header>
             <header id="kratos-mobile-topnav" class="kratos-topnav">
                 <div class="container">
-                    <div class="color-logo"><a href="/">雨辰枫司の猫舍</a></div>
+                    <div class="color-logo"><a href="/">雨辰枫司の寮舍</a></div>
                     <div class="nav-toggle">
                         <a class="kratos-nav-toggle js-kratos-nav-toggle">
                             <i></i>
@@ -381,7 +381,7 @@
             <div class="kratos-cover kratos-cover-2 text-center">
                 <div class="desc desc2 animate-box">
                     <a href="/">
-                        <h2>雨辰枫司の猫舍</h2> <br />
+                        <h2>雨辰枫司の寮舍</h2> <br />
                         <span></span>
                     </a>
                 </div>
@@ -417,7 +417,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        1020
+                        1022
                     
                     字
                 </li>
@@ -428,14 +428,14 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1672975064839"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1672981383625"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
             
             <hr />
             <div itemprop="articleBody"><h1 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h1><p>用于快速查找和修改<br><span id="more"></span></p>
-<h3 id="lowbit"><a href="#lowbit" class="headerlink" title="lowbit"></a>lowbit</h3><p>查找小1的位置<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lowbit</span>(<span class="params">num:<span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="keyword">return</span> num &amp; (-num)</span><br></pre></td></tr></table></figure></p>
+<h3 id="lowbit"><a href="#lowbit" class="headerlink" title="lowbit"></a>lowbit</h3><p>查找最低位1的位置<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lowbit</span>(<span class="params">num:<span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="keyword">return</span> num &amp; (-num)</span><br></pre></td></tr></table></figure></p>
 <h3 id="区域查询"><a href="#区域查询" class="headerlink" title="区域查询"></a>区域查询</h3><p>查询 0 ~ idx 数据的和<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">numSum</span>(<span class="params">arr:<span class="built_in">list</span>,idx:<span class="built_in">int</span></span>):</span><br><span class="line">    Sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> idx &gt; <span class="number">0</span>:</span><br><span class="line">        Sum += arr[idx]</span><br><span class="line">        idx -= lowbit(idx)</span><br><span class="line">    <span class="keyword">return</span> Sum</span><br></pre></td></tr></table></figure></p>
 <h3 id="单点更新"><a href="#单点更新" class="headerlink" title="单点更新"></a>单点更新</h3><p>更新 idx 的值为 val<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">updata</span>(<span class="params">arr:<span class="built_in">list</span>,idx:<span class="built_in">int</span>,val:<span class="built_in">int</span></span>):</span><br><span class="line">    lenT = <span class="built_in">len</span>(arr)</span><br><span class="line">    <span class="keyword">while</span> idx &lt; <span class="built_in">len</span>:</span><br><span class="line">        arr[idx] += val</span><br><span class="line">        idx += lowbit(idx)</span><br></pre></td></tr></table></figure></p>
 <h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ArrayTree</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,array = [],arrayLen = <span class="number">0</span></span>):</span><br><span class="line">        self.array = array</span><br><span class="line">        self.arrayLen = arrayLen</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">lowbit</span>(<span class="params">self,num</span>):</span><br><span class="line">        <span class="keyword">return</span> num &amp; (-num)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">updata</span>(<span class="params">self,idx,val</span>):</span><br><span class="line">        <span class="keyword">if</span> idx == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">while</span> idx &lt; self.arrayLen:</span><br><span class="line">            self.array[idx] += val</span><br><span class="line">            idx += self.lowbit(idx)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numSum</span>(<span class="params">self,idx</span>):</span><br><span class="line">        Sum = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> idx &gt; <span class="number">0</span>:</span><br><span class="line">            Sum += self.array[idx]</span><br><span class="line">            idx -= self.lowbit(idx)</span><br><span class="line">        <span class="keyword">return</span> Sum</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">LRSum</span>(<span class="params">self,left,right</span>):</span><br><span class="line">        <span class="keyword">return</span> self.numSum(right) - self.numSum(left)</span><br></pre></td></tr></table></figure></div>
@@ -523,7 +523,7 @@
                     <a class="tag-none-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2023-01-06T03:17:44.839Z" itemprop="dateModified">最后编辑：2023-01-06</time>
+                    <time datetime="2023-01-06T05:03:03.625Z" itemprop="dateModified">最后编辑：2023-01-06</time>
                 </div>
             </div>
         </footer>
@@ -683,7 +683,7 @@
                     </ul>
                     <ul class="kratos-copyright">
                         <div>
-                            <li>&copy; 2023 雨辰枫司の猫舍 版权所有.</li>
+                            <li>&copy; 2023 雨辰枫司の寮舍 版权所有.</li>
                             <li>本站已运行<span id="span_dt">Loading...</span></li>
                         </div>
                         <div>
