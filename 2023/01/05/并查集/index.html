@@ -423,6 +423,11 @@
                     字
                 </li>
                 
+                    <li id="/2023/01/05/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="leancloud_visitors" data-flag-title="并查集">
+                        <i class="fa fa-eye"></i>
+                        <span class="leancloud-visitors-count"> </span> 次阅读
+                    </li>
+                
             </ul>
         </header>
         <div class="kratos-post-content">
@@ -583,6 +588,31 @@
             
         </nav>
     
+    
+        <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: '2UCGyzxV9wEwayxOsdFrqx4e-MdYXbMMI',
+                appKey: '1hsyhwlAKmFLT0tFNF5K1OV4',
+                visitor: true,
+                enableQQ: false,
+                placeholder: '还在摸索中,目前不可评论...',
+                path: '/2023/01/05/%E5%B9%B6%E6%9F%A5%E9%9B%86/'
+            });
+        }
+        if (typeof Valine === 'undefined') {
+            const src = '/vendors/valine@1.4.18/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
     
 </article>
 

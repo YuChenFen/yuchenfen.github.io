@@ -535,6 +535,11 @@ mjx-container[display="true"] + br {
                     字
                 </li>
                 
+                    <li id="/2023/01/05/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="背包问题">
+                        <i class="fa fa-eye"></i>
+                        <span class="leancloud-visitors-count"> </span> 次阅读
+                    </li>
+                
             </ul>
         </header>
         <div class="kratos-post-content">
@@ -907,6 +912,31 @@ mjx-container[display="true"] + br {
             
         </nav>
     
+    
+        <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: '2UCGyzxV9wEwayxOsdFrqx4e-MdYXbMMI',
+                appKey: '1hsyhwlAKmFLT0tFNF5K1OV4',
+                visitor: true,
+                enableQQ: false,
+                placeholder: '还在摸索中,目前不可评论...',
+                path: '/2023/01/05/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/'
+            });
+        }
+        if (typeof Valine === 'undefined') {
+            const src = '/vendors/valine@1.4.18/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
     
 </article>
 
