@@ -535,6 +535,14 @@ mjx-container[display="true"] + br {
                     字
                 </li>
                 
+                    
+                    
+                        <li>
+                            <i class="fa fa-commenting-o"></i>
+                            <span data-path="/2023/01/04/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/" class="waline-comment-count"> </span> 条评论
+                        </li>
+                    
+                
             </ul>
         </header>
         <div class="kratos-post-content">
@@ -654,6 +662,28 @@ mjx-container[display="true"] + br {
             
         </nav>
     
+    
+        <div id="w-comments" class="post-comments"></div>
+<link rel="stylesheet" href="/vendors/@waline/client@2.14.1/dist/waline.css" />
+<script>
+    var load_comm = () => {
+        const init = () => {
+            Waline.init(Object.assign({
+                el: '#w-comments',
+                path: '/2023/01/04/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/',
+                dark: 'html[data-theme="dark"]',
+            }, JSON.parse('{"serverURL":"ycf.ikkun.ml","comment":true,"pageview":false}')));
+        }
+        if (typeof Waline === 'undefined') {
+            const src = '/vendors/@waline/client@2.14.1/dist/waline.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://waline.js.org/">comments powered by Waline.</a></noscript>
+
     
 </article>
 
